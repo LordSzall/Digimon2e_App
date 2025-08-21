@@ -1209,10 +1209,10 @@ class DigimonDNDApp:
             ram_bonus = int(derived_bonus_vars.get("ram_bonus").get() or 0)
             cpu_bonus = int(derived_bonus_vars.get("cpu_bonus").get() or 0)
 
-            bit_value = max(1, math.floor((acc_stat - acc_bonus) / 3)) + bit_bonus + size_bit
-            dos_value = max(1, math.floor((dam_stat - dam_bonus) / 3)) + dos_bonus + size_dos
-            ram_value = max(1, math.floor((dod_stat - dod_bonus) / 3)) + ram_bonus + size_ram
-            cpu_value = max(1, math.floor((arm_stat - arm_bonus) / 3)) + cpu_bonus + size_cpu
+            bit_value = max(1, math.floor(((acc_stat - acc_bonus) + 3) / 3)) + bit_bonus + size_bit
+            dos_value = max(1, math.floor(((dam_stat - dam_bonus) + 3) / 3)) + dos_bonus + size_dos
+            ram_value = max(1, math.floor(((dod_stat - dod_bonus) + 3) / 3)) + ram_bonus + size_ram
+            cpu_value = max(1, math.floor(((arm_stat - arm_bonus) + 3) / 3)) + cpu_bonus + size_cpu
 
             derived_vars["bit"].set(str(bit_value))
             derived_vars["dos"].set(str(dos_value))
